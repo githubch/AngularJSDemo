@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS</title>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <script src="JavaScript/angular.js"></script>
+    <script src="JavaScript/angular-route.js"></script>
+    <script src="JavaScript/app.js"></script>
+    <script src="JavaScript/routes.js"></script>
+    <script src="JavaScript/AccountController.js"></script>
+    <script src="JavaScript/directive.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <a class="brand" href="#/"><img width="20px;" src="img/logo.png">FreeWheelers</a>
+    <ul class="nav">
+        <li><a href="#/" class="header-link">Home</a></li>
+        <li><a href="#/survey/report" class="header-link">NPS Report</a></li>
+        <li><a href="#/admin" class="header-link">Admin Profile</a></li>
+        <li><a href="#/userProfile" class="header-link">User Profile</a></li>
+        <li><a href="#/account/create" class="header-link">Create Account</a></li>
+        <li><a href="#/logout" class="header-link">Logout</a></li>
+        <li id="welcome" class="navbar-text">Welcome</li>
+    </ul>
+    <div>
+        <div ng-view></div>
+    </div>
+</div>
+</body>
+</html>

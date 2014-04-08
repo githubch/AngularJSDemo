@@ -1,0 +1,134 @@
+<div>
+    <div class="page-action">
+        Create a new account
+    </div>
+    <span class="inline-block message">
+                If your country is not listed we don't ship there. Please check back.
+    </span>
+
+    <form name="myForm">
+        <div class="country">
+            <label id="fld_country"><span class="mandatory">&#10033 </span>Country</label>
+
+            <div class="controls">
+                <select ng-model="country" ng-options="country.name for country in countries"></select><br/>
+            </div>
+        </div>
+
+        <h3 class="create-account-header">Add basic information</h3>
+
+        <div>
+            <label for="fld_email"> <span class="mandatory">&#10033 </span>Email</label>
+            <div class="controls">
+                <!--<input type="text" id="fld_email" placeholder="somebody@something.com" name="email" ng-model="Email" required="" data-valid-email/>-->
+                <email id="fld_email" name="email" ng-model="Email" required=""></email>
+                <span class="help-block, red" ng-show="myForm.email.$error.required">Email required</span>
+                <span class="help-block, red" ng-show="myForm.email.$error.email">Invalid Email!</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_password"> <span class="mandatory">&#10033 </span>Password</label>
+
+            <div class="controls" id="password">
+                <div id="passwordInput">
+                    <input type="password" id="fld_password" placeholder="Password" name="password" required="" ng-model="Password">
+                    <span class="help-block, red" ng-show="myForm.password.$error.required">Field required</span>
+
+            </div>
+
+        </div>
+
+        <div>
+            <label for="fld_confirmPassword"> <span class="mandatory">&#10033 </span>Confirm Password</label>
+
+            <div class="controls" id="confirmPassword">
+                <input type="password" id="fld_confirmPassword" placeholder="Retype password" name="confirmPassword" required="" ng-model="ConfirmPassword"
+                       match="Password">
+                <span class="help-block, red" data-ng-show="myForm.confirmPassword.$error.required">This is required.</span>
+                <span class="help-block, red" data-ng-show="myForm.confirmPassword.$error.match">Passwords do not match.</span></div>
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_name"> <span class="mandatory">&#10033 </span>Name</label>
+
+            <div class="controls">
+                <input type="text" id="fld_name" placeholder="Your name" name="name" required="" ng-model="Name"/>
+                <span class="help-block, red" ng-show="myForm.name.$error.required">Name required</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_phoneNumber"> <span class="mandatory">&#10033 </span>Phone Number</label>
+
+            <div class="controls">
+                <input type="text" id="fld_phoneNumber" placeholder="555-123456" name="phoneNumber" required="" ng-model="phoneNumber">
+                <span class="help-block, red" ng-show="myForm.phoneNumber.$error.required">Phone Number required</span>
+            </div>
+        </div>
+
+        <h3 class="create-account-header">Add address information</h3>
+
+        <div>
+            <label for="fld_street1"><span class="mandatory">&#10033 </span>Address Line 1</label>
+
+            <div class="controls">
+                <input type="street" id="fld_street1" placeholder="Street address, P.O. box, company name, c/o"
+                       maxlength="255" name="street1" required="" ng-model="Street1">
+                <span class="help-block, red" ng-show="myForm.street1.$error.required">Street1 required</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_street2"><span class="blank"/>Address Line 2</label>
+
+            <div class="controls">
+                <input type="street" id="fld_street2" placeholder="Apartment, suite, unit, building, floor, etc"
+                       maxlength="255" name="street2">
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_city"><span class="mandatory">&#10033 </span>City</label>
+
+            <div class="controls">
+                <input type="text" id="fld_city" placeholder="City" maxlength="100" name="city" required="" ng-model="City">
+                <span class="help-block, red" ng-show="myForm.city.$error.required">City required</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_state"><span class="blank"/>State/Province</label>
+
+            <div class="controls">
+                <input type="text" id="fld_state" placeholder="State" maxlength="100" name="state"
+                        >
+            </div>
+        </div>
+
+        <div>
+            <label for="fld_postCode"><span class="mandatory">&#10033 </span>Post Code</label>
+
+            <div class="controls">
+                <input type="text" id="fld_postCode" placeholder="5-10 characters" maxlength="10" name="postCode" required="" ng-model="PostCode">
+                <span class="help-block, red" ng-show="myForm.postCode.$error.required">Post Code required</span>
+            </div>
+        </div>
+
+        <div>
+            <span class="mandatory">&#10033 </span><input type="checkbox" id="fld_termsAndConditions" name="termsAndConditions">
+            <div class="controls" id="checkbox">I agree to the FreeWheelers <a class="blue-link" target="_self" href="/terms">Terms and Conditions</a>.
+            </div>
+        </div>
+
+        <div id="clarification"><span class="mandatory">&#10033 </span>Required</div>
+
+        <div>
+            <div class="controls">
+                <button type="submit" id="createAccount" value="Submit" ng-disabled="myForm.$invalid">Create Account</button>
+            </div>
+        </div>
+
+    </form>
+</div>
