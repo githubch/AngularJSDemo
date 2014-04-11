@@ -11,7 +11,10 @@
             <label id="fld_country"><span class="mandatory">&#10033 </span>Country</label>
 
             <div class="controls">
-                <select ng-model="country" ng-options="country.name for country in countries"></select><br/>
+                <!--<select ng-model="country" ng-options="country.name for country in countries | filter:countryFilter"></select><br/>-->
+                <select id="country" ng-model="country">
+                    <option ng-repeat="country in countries" value="{{country.name}}">{{country | countryName}}</option>
+                </select>
             </div>
         </div>
 
