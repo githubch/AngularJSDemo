@@ -11,7 +11,8 @@ describe("AccountControllerTest", function(){
         $httpBackend.flush();
     }));
 
-    it("", function(){
+    it("should default country equals 'Select your country'", function(){
         expect(scope.country).toEqual("Select your country");
+        expect("1").toEqual("2");
     })
 });
